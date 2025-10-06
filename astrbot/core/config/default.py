@@ -1078,6 +1078,19 @@ CONFIG_METADATA_2 = {
                         "minimax-voice-english-normalization": False,
                         "timeout": 20,
                     },
+                    "Custom TTS(API)": {  # 自定义TTS API提供商配置 - 支持通过HTTP API调用自定义TTS服务
+                        "id": "custom_tts",                    # 提供商唯一标识
+                        "type": "custom_tts_api",              # 提供商类型，对应manager.py中的case分支
+                        "provider": "custom",                  # 提供商名称
+                        "provider_type": "text_to_speech",     # 服务类型：文本转语音
+                        "enable": False,                       # 是否启用该提供商
+                        "api_key": "",                         # API密钥，可选，用于身份认证
+                        "api_base": "http://127.0.0.1:50042",  # TTS服务的基础API地址 (你的服务地址)
+                        "role": "缪尔赛斯",                     # 角色名称 (可用的角色)
+                        "emotion": "平常",                      # 情感类型 (可用的情感)
+                        "speed": 1.0,                          # 语速参数 (0.1-3.0，1.0为正常语速)
+                        "timeout": 30,                         # 请求超时时间（秒）
+                    },
                     "火山引擎_TTS(API)": {
                         "id": "volcengine_tts",
                         "type": "volcengine_tts",

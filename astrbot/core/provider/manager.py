@@ -296,6 +296,10 @@ class ProviderManager:
                     from .sources.gemini_tts_source import (
                         ProviderGeminiTTSAPI as ProviderGeminiTTSAPI,
                     )
+                case "custom_tts_api":  # 自定义TTS API提供商 - 支持通过HTTP API调用自定义TTS服务
+                    from .sources.custom_tts_source import (
+                        ProviderCustomTTS as ProviderCustomTTS,
+                    )
                 case "openai_embedding":
                     from .sources.openai_embedding_source import (
                         OpenAIEmbeddingProvider as OpenAIEmbeddingProvider,
